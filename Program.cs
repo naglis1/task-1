@@ -17,18 +17,18 @@ namespace Task1
             {
                 try
                 {
-                    io.Input(ref h, ref min);
+                    io.TimeInput(ref h, ref min);
                 }
                 catch (ArgumentOutOfRangeException)
                 {
                     Console.WriteLine("Time is invalid or not in 24h format");
-                    Console.WriteLine("\"e\" to end program, \"r\" to repeat: ");
+                    Console.WriteLine("\"e\" to end program, any ohter input to repeat: ");
                     string e = Console.ReadLine();
                     if (e == "e")
                     {
                         return;
                     }
-                    else if (e == "r")
+                    else
                     {
                         continue;
                     }
@@ -37,7 +37,7 @@ namespace Task1
             }
             
             angle = algo.GetAngle(h, min);
-            io.Output(angle);
+            io.AngleOutput(angle);
         }
 
         static void Main(string[] args)
